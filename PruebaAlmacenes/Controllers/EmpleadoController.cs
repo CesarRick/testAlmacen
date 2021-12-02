@@ -72,6 +72,54 @@ namespace PruebaAlmacenes.Controllers
 
             return Redirect(Url.Content("~/Empleado/"));
         }
+
+        //Editar
+        [HttpGet]
+        public ActionResult Edit(int Id)
+        {
+            EditEmpleadoViewModel model = new EditEmpleadoViewModel();
+            using (var db = new IncomelDBEntities())
+            {
+                var empleado = db.Empleado.Find(Id);
+
+                model.DPI = empleado.DPI;
+                model.NombreCompleto = empleado.NombreCompleto;
+                model.CantidadHijos = (int)empleado.CantidadHijos;
+                model.SalarioBase = empleado.SalarioBase;
+                model.BonoDecreto = empleado.BonoDecreto;
+                model.UsuarioID = empleado.UsuarioID;
+                //model.FechaCreacion = empleado.FechaCreacion;
+            }
+
+            return View(model);
+        }
+
+        [HttpPost]
+        public ActionResult Edit(EditEmpleadoViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+            using (var db = new IncomelDBEntities())
+            {
+                var empleado = db.Empleado.Find(model.EmpleadoID);
+                empleado.DPI = model.DPI;
+                empleado.NombreCompleto = model.NombreCompleto;
+                empleado.CantidadHijos = model.CantidadHijos;
+                empleado.SalarioBase = model.SalarioBase;
+                empleado.BonoDecreto = model.BonoDecreto;
+                empleado.UsuarioID = model.UsuarioID;
+                //empleado.FechaCreacion = model.FechaCreacion;
+
+               
+                db.Entry(empleado).State = System.Data.Entity.EntityState.Modified;
+                db.SaveChanges();
+                //db.Dispose();           
+            }
+
+            return Redirect(Url.Content("~/Empleado/"));
+        }
     }
 }
 
