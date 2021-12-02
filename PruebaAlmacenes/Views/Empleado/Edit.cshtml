@@ -1,7 +1,49 @@
 ﻿
+
+@model PruebaAlmacenes.Models.ViewModel.EditEmpleadoViewModel
+
 @{
-    ViewBag.Title = "Edit";
+    ViewBag.Title = "Editar Empleado";
 }
 
-<h2>Edit</h2>
+<h2> @ViewBag.Title </h2>
+<div class="row">
+    <div class="col-md-12">
+        @using (Html.BeginForm("Edit", "Empleado", FormMethod.Post, new { role = "form", @class = "" }))
+        {
+            @Html.HiddenFor(d => d.EmpleadoID)
+            @Html.AntiForgeryToken()
+
+            @Html.ValidationMessage("Error", new { @class = "text-danger" })
+
+            @Html.LabelFor(d => d.DPI)
+            @Html.TextBoxFor(d => d.DPI, new { @class = "form-control" })
+            @Html.ValidationMessage("DPI", new { @class = "text-danger" })
+
+            @Html.LabelFor(d => d.NombreCompleto)
+            @Html.TextBoxFor(d => d.NombreCompleto, new { @class = "form-control" })
+            @Html.ValidationMessage("NombreCompleto", new { @class = "text-danger" })
+
+            @Html.LabelFor(d => d.CantidadHijos)
+            @Html.TextBoxFor(d => d.CantidadHijos, new { @class = "form-control" })
+            @Html.ValidationMessage("CantidadHijos", new { @class = "text-danger" })
+
+            @Html.LabelFor(d => d.SalarioBase)
+            @Html.TextBoxFor(d => d.SalarioBase, new { @class = "form-control" })
+            @Html.ValidationMessage("SalarioBase", new { @class = "text-danger" })
+
+            @Html.LabelFor(d => d.BonoDecreto)
+            @Html.TextBoxFor(d => d.BonoDecreto, new { @class = "form-control" })
+            @Html.ValidationMessage("BonoDecreto", new { @class = "text-danger" })
+
+            @Html.LabelFor(d => d.UsuarioID)
+            @Html.TextBoxFor(d => d.UsuarioID, new { @class = "form-control" })
+            @Html.ValidationMessage("UsuarioID", new { @class = "text-danger" })
+
+            <div style="text-align: right;">
+                <input type="submit" class="btn btn-success" value="Guardar" />
+            </div>
+        }
+    </div>
+</div>
 

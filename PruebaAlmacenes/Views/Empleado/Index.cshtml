@@ -1,7 +1,5 @@
 ﻿
 
-
-
 @model List<PruebaAlmacenes.Models.TableViewModels.EmpleadoTableViewModel>
 
 @{
@@ -40,7 +38,7 @@
                 <td> @empleado.FechaCreacion</td>
                 <td>
 
-                    <input onclick="document.location.href='@Url.Content("~/User/Edit/"+empleado.EmpleadoID)'" type="button" value="Editar" class="btn btn-warning" />
+                    <input onclick="document.location.href='@Url.Content("~/Empleado/Edit/"+empleado.EmpleadoID)'" type="button" value="Editar" class="btn btn-warning" />
                     <input onclick="jsDelete(@empleado.EmpleadoID);" type="button" value="Eliminar" class="btn btn-danger" />
 
 
@@ -57,7 +55,7 @@
 
         if (confirm("Esta seguro que desea eliminar?")) {
 
-        url = "@Url.Content("~/Empleado/Delete")" + "/"+id;
+        url = "@Url.Content("~/Empleado/Eliminar")" + "/"+id;
         $.post(url, function (data) {
             if (data == "1") {
                 document.location.href = "@Url.Content("~/Empleado/")"

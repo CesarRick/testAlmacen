@@ -48,6 +48,8 @@ C:\Users\iDevs\source\repos\PruebaAlmacenes\PruebaAlmacenes\bin\roslyn\vbc.rsp
 C:\Users\iDevs\source\repos\PruebaAlmacenes\PruebaAlmacenes\bin\roslyn\VBCSCompiler.exe
 C:\Users\iDevs\source\repos\PruebaAlmacenes\PruebaAlmacenes\bin\roslyn\VBCSCompiler.exe.config
 C:\Users\iDevs\source\repos\PruebaAlmacenes\PruebaAlmacenes\bin\Antlr3.Runtime.dll
+C:\Users\iDevs\source\repos\PruebaAlmacenes\PruebaAlmacenes\bin\EntityFramework.dll
+C:\Users\iDevs\source\repos\PruebaAlmacenes\PruebaAlmacenes\bin\EntityFramework.SqlServer.dll
 C:\Users\iDevs\source\repos\PruebaAlmacenes\PruebaAlmacenes\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 C:\Users\iDevs\source\repos\PruebaAlmacenes\PruebaAlmacenes\bin\Microsoft.Web.Infrastructure.dll
 C:\Users\iDevs\source\repos\PruebaAlmacenes\PruebaAlmacenes\bin\Newtonsoft.Json.dll
@@ -59,6 +61,8 @@ C:\Users\iDevs\source\repos\PruebaAlmacenes\PruebaAlmacenes\bin\System.Web.WebPa
 C:\Users\iDevs\source\repos\PruebaAlmacenes\PruebaAlmacenes\bin\System.Web.WebPages.dll
 C:\Users\iDevs\source\repos\PruebaAlmacenes\PruebaAlmacenes\bin\System.Web.WebPages.Razor.dll
 C:\Users\iDevs\source\repos\PruebaAlmacenes\PruebaAlmacenes\bin\WebGrease.dll
+C:\Users\iDevs\source\repos\PruebaAlmacenes\PruebaAlmacenes\bin\EntityFramework.xml
+C:\Users\iDevs\source\repos\PruebaAlmacenes\PruebaAlmacenes\bin\EntityFramework.SqlServer.xml
 C:\Users\iDevs\source\repos\PruebaAlmacenes\PruebaAlmacenes\bin\System.Web.Helpers.xml
 C:\Users\iDevs\source\repos\PruebaAlmacenes\PruebaAlmacenes\bin\System.Web.Mvc.xml
 C:\Users\iDevs\source\repos\PruebaAlmacenes\PruebaAlmacenes\bin\System.Web.Optimization.xml
@@ -76,12 +80,7 @@ C:\Users\iDevs\source\repos\PruebaAlmacenes\PruebaAlmacenes\bin\es\System.Web.Ra
 C:\Users\iDevs\source\repos\PruebaAlmacenes\PruebaAlmacenes\bin\es\System.Web.WebPages.resources.dll
 C:\Users\iDevs\source\repos\PruebaAlmacenes\PruebaAlmacenes\bin\es\System.Web.WebPages.Deployment.resources.dll
 C:\Users\iDevs\source\repos\PruebaAlmacenes\PruebaAlmacenes\bin\es\System.Web.WebPages.Razor.resources.dll
-C:\Users\iDevs\source\repos\PruebaAlmacenes\PruebaAlmacenes\obj\Debug\PruebaAlmacenes.csprojAssemblyReference.cache
 C:\Users\iDevs\source\repos\PruebaAlmacenes\PruebaAlmacenes\obj\Debug\PruebaAlmacenes.csproj.CoreCompileInputs.cache
 C:\Users\iDevs\source\repos\PruebaAlmacenes\PruebaAlmacenes\obj\Debug\PruebaAlmacenes.csproj.CopyComplete
 C:\Users\iDevs\source\repos\PruebaAlmacenes\PruebaAlmacenes\obj\Debug\PruebaAlmacenes.dll
 C:\Users\iDevs\source\repos\PruebaAlmacenes\PruebaAlmacenes\obj\Debug\PruebaAlmacenes.pdb
-C:\Users\iDevs\source\repos\PruebaAlmacenes\PruebaAlmacenes\bin\EntityFramework.dll
-C:\Users\iDevs\source\repos\PruebaAlmacenes\PruebaAlmacenes\bin\EntityFramework.SqlServer.dll
-C:\Users\iDevs\source\repos\PruebaAlmacenes\PruebaAlmacenes\bin\EntityFramework.xml
-C:\Users\iDevs\source\repos\PruebaAlmacenes\PruebaAlmacenes\bin\EntityFramework.SqlServer.xml

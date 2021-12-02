@@ -1,7 +1,113 @@
 ﻿
+@model PruebaAlmacenes.Models.ViewModel.EmpleadoViewModel
+
 @{
-    ViewBag.Title = "Add";
+    ViewBag.Title = "Agregar Empleado";
 }
 
-<h2>Add</h2>
+<h2> @ViewBag.Title </h2>
+<div class="row">
+    <div class="col-md-6">
+        @using (Html.BeginForm("Add", "Empleado", FormMethod.Post, new { role = "form", @class = "" }))
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationMessage("Error", new { @class = "text-danger" })
 
+            @Html.LabelFor(d => d.DPI)
+            @Html.TextBoxFor(d => d.DPI, new { @class = "form-control" })
+            @Html.ValidationMessage("DPI", new { @class = "text-danger" })
+
+            @Html.LabelFor(d => d.NombreCompleto)
+            @Html.TextBoxFor(d => d.NombreCompleto, new { @class = "form-control" })
+            @Html.ValidationMessage("NombreCompleto", new { @class = "text-danger" })
+
+            @Html.LabelFor(d => d.CantidadHijos)
+            @Html.TextBoxFor(d => d.CantidadHijos, new { @class = "form-control" })
+            @Html.ValidationMessage("CantidadHijos", new { @class = "text-danger" })
+
+            @Html.LabelFor(d => d.SalarioBase)
+            @Html.TextBoxFor(d => d.SalarioBase, new { @class = "form-control" })
+            @Html.ValidationMessage("SalarioBase", new { @class = "text-danger" })
+
+            @Html.LabelFor(d => d.BonoDecreto)
+            @Html.TextBoxFor(d => d.BonoDecreto, new { @Value = "250.00", @class = "form-control" })
+            @Html.ValidationMessage("BonoDecreto", new { @class = "text-danger" })
+
+            @Html.LabelFor(d => d.UsuarioID)
+            @Html.TextBoxFor(d => d.UsuarioID, new { onclick = "sumar();", @class = "form-control",  })
+            @Html.ValidationMessage("UsuarioID", new { @class = "text-danger" })
+
+            <div class="col-md-6">
+                <div>
+                    <Label>IGSS: </Label><p>IGSS</p>                    
+                </div>
+                <div id="r">
+                    <p id="resultado"></p>
+                </div>
+                <div>
+
+                </div>
+            </div>
+
+            <div>
+                <input type="submit" class="btn btn-success" value="Guardar" />
+            </div>
+        }
+    </div>
+</div>
+
+<script>
+    function jsDelete(id) {
+
+        if (confirm("Esta seguro que desea eliminar?")) {
+
+        url = "@Url.Content("~/Empleado/Eliminar")" + "/"+id;
+        $.post(url, function (data) {
+            if (data == "1") {
+                document.location.href = "@Url.Content("~/Empleado/")"
+            } else {
+                alert("Ha ocurrido un error.")
+            }
+        })
+
+        }
+    }
+
+  
+</script>
+
+@*<script type="text/javascript">
+    /* Sumar dos números. */
+    function sumar() {
+        var totalIgss = 0;
+        var totalIrtra = 0;
+        var totalSalario = 0;
+        var totalSalarioLiquido = 0;
+        
+
+        var Igss = document.getElementById('SalarioBase');
+        var Irtra = document.getElementById('SalarioBase');
+        var Salario = document.getElementById('SalarioBase');
+        var SalarioLiquido = 0;
+        var bonoPaternidad = 0;
+
+        
+
+        //Igss = (0.0483 * parseFloat( document.getElementById('SalarioBase')));
+        //Irtra = (0.001 * document.getElementById('SalarioBase'));
+        //bonoPaternidad = (133 * document.getElementById('CantidadHijos'));
+        //BonoDecreto = 250;
+        //SalarioBase = document.getElementById('SalarioBase');
+        totalSalario = SalarioBase + bonoPaternidad + BonoDecreto;
+
+        SalarioLiquido = (totalSalario - Igss - Irtra);
+
+        
+
+        /* Esta es la suma. */
+        //total = (parseInt(total) + parseInt(valor));
+
+        // Colocar el resultado de la suma en el control "span".
+        document.getElementById('resultado').innerHTML = parseFloat( Igss);
+    }
+</script>*@

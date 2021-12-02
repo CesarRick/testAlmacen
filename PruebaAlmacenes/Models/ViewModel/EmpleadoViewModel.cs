@@ -35,6 +35,7 @@ namespace PruebaAlmacenes.Models.ViewModel
 
     public class EditEmpleadoViewModel
     {
+        [Required]
         public int EmpleadoID { get; set; }
 
         [Required]
@@ -59,6 +60,6 @@ namespace PruebaAlmacenes.Models.ViewModel
 
         public int UsuarioID { get; set; }
 
-        public DateTime FechaCreacion { get; set; }
+        //public DateTime FechaCreacion { get; set; }
     }
 }

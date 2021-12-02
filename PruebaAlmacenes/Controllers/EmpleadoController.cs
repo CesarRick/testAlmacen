@@ -56,15 +56,17 @@ namespace PruebaAlmacenes.Controllers
 
             using (var db = new IncomelDBEntities())
             {
+                var fecha = DateTime.Now;
+
                 Empleado empleado = new Empleado();
-                empleado.EmpleadoID = 1;
+                //empleado.EmpleadoID = 1;
                 empleado.DPI = model.DPI;
                 empleado.NombreCompleto = model.NombreCompleto;
                 empleado.CantidadHijos = model.CantidadHijos;
                 empleado.SalarioBase = model.SalarioBase;
                 empleado.BonoDecreto = model.BonoDecreto;
                 empleado.UsuarioID = model.UsuarioID;
-                empleado.FechaCreacion = model.FechaCreacion;
+                empleado.FechaCreacion = fecha;
                 db.Empleado.Add(empleado);
                 db.SaveChanges();
                 db.Dispose();                
@@ -75,12 +77,12 @@ namespace PruebaAlmacenes.Controllers
 
         //Editar
         [HttpGet]
-        public ActionResult Edit(int Id)
+        public ActionResult Edit(int id)
         {
             EditEmpleadoViewModel model = new EditEmpleadoViewModel();
             using (var db = new IncomelDBEntities())
             {
-                var empleado = db.Empleado.Find(Id);
+                var empleado = db.Empleado.Find(id);
 
                 model.DPI = empleado.DPI;
                 model.NombreCompleto = empleado.NombreCompleto;
@@ -88,6 +90,7 @@ namespace PruebaAlmacenes.Controllers
                 model.SalarioBase = empleado.SalarioBase;
                 model.BonoDecreto = empleado.BonoDecreto;
                 model.UsuarioID = empleado.UsuarioID;
+                model.EmpleadoID = empleado.EmpleadoID;
                 //model.FechaCreacion = empleado.FechaCreacion;
             }
 
@@ -119,6 +122,23 @@ namespace PruebaAlmacenes.Controllers
             }
 
             return Redirect(Url.Content("~/Empleado/"));
+        }
+
+
+        [HttpPost]
+        public ActionResult Eliminar(int id)
+        {
+           
+            using (var db = new IncomelDBEntities())
+            {
+                var empleado = db.Empleado.Find(id);
+   
+                db.Entry(empleado).State = System.Data.Entity.EntityState.Deleted;
+                db.SaveChanges();
+                db.Dispose();           
+            }
+
+            return Content("1");
         }
     }
 }
