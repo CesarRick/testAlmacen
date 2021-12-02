@@ -1,7 +1,39 @@
 ﻿
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
 }
 
-<h2>Index</h2>
+<h2>Iniciar Sesión</h2>
 
+<div style="color:green;">
+    @ViewBag.Message
+</div>
+
+<div style="color:red;">
+    @ViewBag.Error
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="form-style">
+            <div class="form-group">
+                <label for="usuario">Usuario:</label>
+                <input type="text" class="form-control" id="usuario" name="usuario" placeholder="Ingresar usuario">
+                
+            </div>
+            <div class="form-group">
+                <label for="Password">Contraseña:</label>
+                <input type="password" class="form-control" id="Password" name="Password" placeholder="Ingresar contraseña">
+            </div>            
+            <div>
+                @Html.ActionLink("¿Recuperar contraseña?", "StartRecovery")
+            </div>
+            <br />
+            <div>
+                <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
+            </div>
+
+        </div>
+    </div>
+</div>
