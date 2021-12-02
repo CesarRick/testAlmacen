@@ -81,3 +81,7 @@ C:\Users\iDevs\source\repos\PruebaAlmacenes\PruebaAlmacenes\obj\Debug\PruebaAlma
 C:\Users\iDevs\source\repos\PruebaAlmacenes\PruebaAlmacenes\obj\Debug\PruebaAlmacenes.csproj.CopyComplete
 C:\Users\iDevs\source\repos\PruebaAlmacenes\PruebaAlmacenes\obj\Debug\PruebaAlmacenes.dll
 C:\Users\iDevs\source\repos\PruebaAlmacenes\PruebaAlmacenes\obj\Debug\PruebaAlmacenes.pdb
+C:\Users\iDevs\source\repos\PruebaAlmacenes\PruebaAlmacenes\bin\EntityFramework.dll
+C:\Users\iDevs\source\repos\PruebaAlmacenes\PruebaAlmacenes\bin\EntityFramework.SqlServer.dll
+C:\Users\iDevs\source\repos\PruebaAlmacenes\PruebaAlmacenes\bin\EntityFramework.xml
+C:\Users\iDevs\source\repos\PruebaAlmacenes\PruebaAlmacenes\bin\EntityFramework.SqlServer.xml
