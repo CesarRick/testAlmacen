@@ -8,6 +8,9 @@ namespace PruebaAlmacenes
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
             filters.Add(new HandleErrorAttribute());
+
+            //Filtro personalizado
+            filters.Add(new Filters.VerifySession());
         }
     }
 }

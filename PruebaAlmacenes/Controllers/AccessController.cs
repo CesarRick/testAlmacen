@@ -42,8 +42,7 @@ namespace PruebaAlmacenes.Controllers
                 }
             }
             catch (Exception ex)
-            {
-                
+            {                
                 return Content("Ocurrió un error: " + ex.Message);
             }
         }
