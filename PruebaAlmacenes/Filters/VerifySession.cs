@@ -27,7 +27,7 @@ namespace PruebaAlmacenes.Filters
             }
             else
             {
-                // Si ya tiene Session
+                // Si ya tiene Session redireccion a Home / Index
                 if (filterContext.Controller is AccessController == true)
                 {
                     filterContext.HttpContext.Response.Redirect("~/Home/Index");
