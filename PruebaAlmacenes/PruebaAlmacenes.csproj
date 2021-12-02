@@ -129,6 +129,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AccessController.cs" />
+    <Compile Include="Controllers\EmpleadoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\SalirController.cs" />
     <Compile Include="Filters\VerifySession.cs" />
@@ -141,6 +142,7 @@
     <Compile Include="Models\Estado.cs">
       <DependentUpon>TestDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\TableViewModels\EmpleadoTableViewModel.cs" />
     <Compile Include="Models\TestDB.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -159,6 +161,7 @@
     <Compile Include="Models\Usuario.cs">
       <DependentUpon>TestDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\ViewModel\EmpleadoViewModel.cs" />
     <Compile Include="Models\ViewModel\RecoveryPasswordViewModel.cs" />
     <Compile Include="Models\ViewModel\RecoveryViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -228,6 +231,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Empleado\" />
     <Folder Include="Views\Salir\" />
   </ItemGroup>
   <ItemGroup>

@@ -85,7 +85,6 @@ namespace PruebaAlmacenes.Controllers
                     DateTime dateOnly = model.FechaNacimiento;                  
                     dateOnly.ToString("yyyy-MM-dd");
 
-
                     var usuario = db.Usuario.Where(d => d.Email == model.Email && d.FechaNacimiento == dateOnly).FirstOrDefault();
                     
                     if (usuario != null)
@@ -97,19 +96,15 @@ namespace PruebaAlmacenes.Controllers
 
                         // Enviar correo
                         SendEmail enviarMail = new SendEmail();
-                        enviarMail.Send(usuario.Email, token);
-                        //return View("StartRecovery");
+                        enviarMail.Send(usuario.Email, token);                        
                         ViewBag.Message = "El correo ha sido enviado. Verifique su buzón o carpeta Spam.";
                         return View("Index");
                     }
                     else
-                    {
-                        //return View("StartRecovery");
+                    {                        
                         ViewBag.Error = "Error";
                         return View("StartRecovery");
-                    }
-
-                    
+                    }                    
                 }                                              
             }
             catch (Exception ex)
@@ -125,7 +120,7 @@ namespace PruebaAlmacenes.Controllers
         {
             Models.ViewModel.RecoveryPasswordViewModel model = new Models.ViewModel.RecoveryPasswordViewModel();
 
-            model.Token = token;
+            model.Token = token;            
 
             using (Models.IncomelDBEntities db = new Models.IncomelDBEntities())
             {
