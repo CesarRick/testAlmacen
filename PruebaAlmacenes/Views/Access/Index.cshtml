@@ -16,24 +16,45 @@
 
 <div class="row">
     <div class="col-md-6">
-        <div class="form-style">
-            <div class="form-group">
-                <label for="usuario">Usuario:</label>
-                <input type="text" class="form-control" id="usuario" name="usuario" placeholder="Ingresar usuario">
-                
-            </div>
-            <div class="form-group">
-                <label for="Password">Contraseña:</label>
-                <input type="password" class="form-control" id="Password" name="Password" placeholder="Ingresar contraseña">
-            </div>            
-            <div>
-                @Html.ActionLink("¿Recuperar contraseña?", "StartRecovery")
-            </div>
-            <br />
-            <div>
-                <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
-            </div>
+        <form id="frm">
+            <div class="form-style">
+                <div class="form-group">
+                    <label for="usuario">Usuario:</label>
+                    <input type="text" class="form-control" id="userName" name="userName" placeholder="Ingresar usuario">
 
-        </div>
+                </div>
+                <div class="form-group">
+                    <label for="Password">Contraseña:</label>
+                    <input type="password" class="form-control" id="password" name="password" placeholder="Ingresar contraseña">
+                </div>
+                <div>
+                    @Html.ActionLink("¿Recuperar contraseña?", "StartRecovery")
+                </div>
+                <br />
+                <div>
+                    <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
+                </div>
+            </div>
+        </form>
     </div>
 </div>
+
+@section scripts{
+    <script>
+    $(document).ready(function () {
+        $("#frm").submit(function (e) {
+            e.preventDefault();
+            url = "@Url.Content("~/Access/Login")"
+            parametros = $(this).serialize();
+
+            $.post(url, parametros, function (data) {
+                if (data == "1") {
+                    document.location.href = "@Url.Content("~/")";
+                } else {
+                    alert(data)
+                }
+            })
+        })
+    })
+    </script>
+}
