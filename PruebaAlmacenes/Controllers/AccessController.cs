@@ -11,10 +11,7 @@ using PruebaAlmacenes.Utilities;
 namespace PruebaAlmacenes.Controllers
 {
     public class AccessController : Controller
-    {
-        // Variable global para capturar dominio
-        string urlDomain = "http://localhost:64759/";
-
+    {        
         // GET: Access
         public ActionResult Index()
         {
@@ -71,7 +68,8 @@ namespace PruebaAlmacenes.Controllers
                 //Validar el modelo
                 if (!ModelState.IsValid)
                 {
-                    return View(model);
+                    //return View(model);
+                    return View();
                 }
                 // Instanciar Clase para Generar Token
                 TokenGenerator getToken = new TokenGenerator();
@@ -90,12 +88,15 @@ namespace PruebaAlmacenes.Controllers
                         db.Entry(usuario).State = System.Data.Entity.EntityState.Modified;
                         db.SaveChanges();
                         db.Dispose();
-                        // Enivar correo
 
-                        //SendEmail(usuario.Email, token);
+                        // Enviar correo
+                        SendEmail enviarMail = new SendEmail();
+                        enviarMail.Send(usuario.Email, token);
+                        
                     }
                 }
-                return View();                
+                ViewBag.Message = "El correo ha sido enviado. Verifique su buzón o carpeta Spam.";
+                return View("StartRecovery");                
             }
             catch (Exception ex)
             {
@@ -116,19 +117,18 @@ namespace PruebaAlmacenes.Controllers
             {
                 if (model.Token == null || model.Token.Trim().Equals(""))
                 {
-                    ViewBag.Error = "Url Expirado o no valido.";
+                    ViewBag.Error = "La Url y/o token ya vencieron.";
                     return View("Index");
                 }
-
-                var usuario = db.Usuario.Where(d => d.Token == model.Token);
-
-                if (usuario == null)
+                // Validar Token existente.
+                var usuario = db.Usuario.Where(d => d.Token == model.Token).ToList();
+                
+                if (usuario.Count == 0 )
                 {
-                    ViewBag.Error = "Url Expirado o no valido.";
-                    return View("Index");
+                    ViewBag.Error = "La Url y/o token ya vencieron.";
+                    return View("Index");                    
                 }
             }
-
             // Retorna respuesta.
             return View(model);
         }
@@ -159,7 +159,6 @@ namespace PruebaAlmacenes.Controllers
             }
             catch (Exception ex)
             {
-
                 throw new Exception(ex.Message) ;
             }
             ViewBag.Message = "Contraseña modificada. Vuelva a iniciar Sesión.";

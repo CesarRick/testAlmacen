@@ -11,16 +11,25 @@ namespace PruebaAlmacenes.Utilities
     {
         public string GetSha256(string strToken)
         {
-            SHA256 sha256 = SHA256Managed.Create();
-            ASCIIEncoding encoding = new ASCIIEncoding();
+            try
+            {
+                SHA256 sha256 = SHA256Managed.Create();
+                ASCIIEncoding encoding = new ASCIIEncoding();
 
-            byte[] stream = null;
-            StringBuilder sb = new StringBuilder();
+                byte[] stream = null;
+                StringBuilder sb = new StringBuilder();
 
-            stream = sha256.ComputeHash(encoding.GetBytes(strToken));
-            for (int i = 0; i < stream.Length; i++) sb.AppendFormat("{0:x2}", stream[i]);
+                stream = sha256.ComputeHash(encoding.GetBytes(strToken));
+                for (int i = 0; i < stream.Length; i++) sb.AppendFormat("{0:x2}", stream[i]);
 
-            return sb.ToString();
+                return sb.ToString();
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception(ex.Message);
+            }
+            
         }
     }
 }

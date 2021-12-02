@@ -1,0 +1,36 @@
+﻿
+@model PruebaAlmacenes.Models.ViewModel.RecoveryViewModel
+
+@{
+    ViewBag.Title = "Recuperación de Contraseña.";
+}
+
+
+
+<h2>Recuperación de Contraseña.</h2>
+<br />
+<div style="color:green;">
+    @ViewBag.Message
+</div>
+
+<div style="color:red;">
+    @ViewBag.Error
+</div>
+
+
+<div class="row">
+    <div class="col-md-6 offset-3">
+        <div class="form-style">
+            <form action="@Url.Content("~/Access/StartRecovery")" method="post">
+                <label>Escribe tu correo electrónico.</label>
+                @Html.TextBoxFor(d => d.Email, null, new { @class = "form-control" })
+                @Html.ValidationMessageFor(d => d.Email, null, new { style = "color:red" })
+                <br />
+                <div class="text-right">
+                    <button class="btn btn-primary">Recuperar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
