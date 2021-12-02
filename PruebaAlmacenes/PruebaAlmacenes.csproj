@@ -228,10 +228,12 @@
     <Content Include="Views\Access\StartRecovery.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\DateTime.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\DateTime.cshtml" />
+    <Content Include="Views\Empleado\Index.cshtml" />
+    <Content Include="Views\Empleado\Add.cshtml" />
+    <Content Include="Views\Empleado\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Empleado\" />
     <Folder Include="Views\Salir\" />
   </ItemGroup>
   <ItemGroup>

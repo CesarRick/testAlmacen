@@ -1,0 +1,71 @@
+﻿
+
+
+
+@model List<PruebaAlmacenes.Models.TableViewModels.EmpleadoTableViewModel>
+
+@{
+    ViewBag.Title = "Lista Empleados";
+}
+
+<h2>Usuarios</h2>
+<div class="row">
+    <div class="col-md-12">
+        <input type="button" class="btn btn-primary" onclick="document.location.href='@Url.Content("~/Empleado/Add")'" value="Agregar Empleado" />
+    </div>
+</div>
+<br />
+<div class="row">
+    <div class="col-lg-12">
+        <table class="table table-bordered">
+            <tr>
+                <th>ID</th>
+                <th>DPI</th>
+                <th>Nombre Completo</th>
+                <th>CantidadHijos</th>
+                <th>SalarioBase</th>
+                <th>BonoDecreto</th>
+                <th>FechaCreacion</th>
+                <th>Acciones</th>
+            </tr>
+            @foreach (var empleado in Model)
+            {
+            <tr>
+                <td> @empleado.EmpleadoID </td>
+                <td> @empleado.DPI </td>
+                <td> @empleado.NombreCompleto</td>
+                <td> @empleado.CantidadHijos</td>
+                <td> @empleado.SalarioBase</td>
+                <td> @empleado.BonoDecreto</td>
+                <td> @empleado.FechaCreacion</td>
+                <td>
+
+                    <input onclick="document.location.href='@Url.Content("~/User/Edit/"+empleado.EmpleadoID)'" type="button" value="Editar" class="btn btn-warning" />
+                    <input onclick="jsDelete(@empleado.EmpleadoID);" type="button" value="Eliminar" class="btn btn-danger" />
+
+
+                </td>
+
+            </tr>
+            }
+        </table>
+    </div>
+</div>
+
+<script>
+    function jsDelete(id) {
+
+        if (confirm("Esta seguro que desea eliminar?")) {
+
+        url = "@Url.Content("~/Empleado/Delete")" + "/"+id;
+        $.post(url, function (data) {
+            if (data == "1") {
+                document.location.href = "@Url.Content("~/Empleado/")"
+            } else {
+                alert("Ha ocurrido un error.")
+            }
+        })
+
+        }
+    }
+</script>
