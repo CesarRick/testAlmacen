@@ -12,8 +12,11 @@ namespace PruebaAlmacenes.Models.ViewModel
         [Required]
         public string Email { get; set; }
 
-        [DataType(DataType.Date)]
-        [Required]
+        //[DataType(DataType.Date)]
+        [Required]       
+        [Display(Name = "Fecha de Nacimiento")]
+        [DataType(DataType.Date)]        
         public DateTime FechaNacimiento { get; set; }
+        //[DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:yyyy-MM-dd}")]
     }
 }

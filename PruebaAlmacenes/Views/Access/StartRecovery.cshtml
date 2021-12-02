@@ -26,6 +26,20 @@
                 @Html.TextBoxFor(d => d.Email, null, new { @class = "form-control" })
                 @Html.ValidationMessageFor(d => d.Email, null, new { style = "color:red" })
                 <br />
+                @*<label>Elija su Fecha de Nacimiento.</label>
+                @Html.EditorFor(d => d.FechaNacimiento, null, new { @class = "form-control" })
+                @Html.ValidationMessageFor(d => d.FechaNacimiento, null, new { style = "color:red" })
+                <br />*@
+
+                <div class="form-group">
+                    <label>Elija su Fecha de Nacimiento.</label>    
+                    <div class="col-md-10">
+                        @Html.EditorFor(d => d.FechaNacimiento, new { htmlAttributes = new {  @class = "datepicker" } })
+                        @Html.ValidationMessageFor(d => d.FechaNacimiento, "", new { @class = "text-danger" })
+                    </div>
+
+                </div>
+
                 <div class="text-right">
                     <button class="btn btn-primary">Recuperar</button>
                 </div>
@@ -33,4 +47,5 @@
         </div>
     </div>
 </div>
+
 

@@ -4,35 +4,35 @@
     <EntitySetMapping Name="Empleado">
       <EntityTypeMapping TypeName="IncomelDBModel.Empleado">
         <MappingFragment StoreEntitySet="Empleado">
-          <ScalarProperty Name="EmpleadoID" ColumnName="EmpleadoID" />
-          <ScalarProperty Name="DPI" ColumnName="DPI" />
-          <ScalarProperty Name="NombreCompleto" ColumnName="NombreCompleto" />
-          <ScalarProperty Name="CantidadHijos" ColumnName="CantidadHijos" />
-          <ScalarProperty Name="SalarioBase" ColumnName="SalarioBase" />
-          <ScalarProperty Name="BonoDecreto" ColumnName="BonoDecreto" />
-          <ScalarProperty Name="FechaNacimiento" ColumnName="FechaNacimiento" />
-          <ScalarProperty Name="UsuarioID" ColumnName="UsuarioID" />
           <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+          <ScalarProperty Name="UsuarioID" ColumnName="UsuarioID" />
+          <ScalarProperty Name="BonoDecreto" ColumnName="BonoDecreto" />
+          <ScalarProperty Name="SalarioBase" ColumnName="SalarioBase" />
+          <ScalarProperty Name="CantidadHijos" ColumnName="CantidadHijos" />
+          <ScalarProperty Name="NombreCompleto" ColumnName="NombreCompleto" />
+          <ScalarProperty Name="DPI" ColumnName="DPI" />
+          <ScalarProperty Name="EmpleadoID" ColumnName="EmpleadoID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Estado">
       <EntityTypeMapping TypeName="IncomelDBModel.Estado">
         <MappingFragment StoreEntitySet="Estado">
-          <ScalarProperty Name="EstadoID" ColumnName="EstadoID" />
           <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="EstadoID" ColumnName="EstadoID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Usuario">
       <EntityTypeMapping TypeName="IncomelDBModel.Usuario">
         <MappingFragment StoreEntitySet="Usuario">
-          <ScalarProperty Name="UsuarioID" ColumnName="UsuarioID" />
-          <ScalarProperty Name="NombreUsuario" ColumnName="NombreUsuario" />
-          <ScalarProperty Name="Email" ColumnName="Email" />
-          <ScalarProperty Name="Contrasena" ColumnName="Contrasena" />
-          <ScalarProperty Name="Token" ColumnName="Token" />
           <ScalarProperty Name="EstadoID" ColumnName="EstadoID" />
+          <ScalarProperty Name="Token" ColumnName="Token" />
+          <ScalarProperty Name="FechaNacimiento" ColumnName="FechaNacimiento" />
+          <ScalarProperty Name="Contrasena" ColumnName="Contrasena" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="NombreUsuario" ColumnName="NombreUsuario" />
+          <ScalarProperty Name="UsuarioID" ColumnName="UsuarioID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

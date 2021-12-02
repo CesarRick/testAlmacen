@@ -1,6 +1,7 @@
 ﻿
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -80,8 +81,13 @@ namespace PruebaAlmacenes.Controllers
                 // Guardar token en BD
                 using (Models.IncomelDBEntities db = new Models.IncomelDBEntities())
                 {
-                    var usuario = db.Usuario.Where(d => d.Email == model.Email).FirstOrDefault();
+                    
+                    DateTime dateOnly = model.FechaNacimiento;                  
+                    dateOnly.ToString("yyyy-MM-dd");
 
+
+                    var usuario = db.Usuario.Where(d => d.Email == model.Email && d.FechaNacimiento == dateOnly).FirstOrDefault();
+                    
                     if (usuario != null)
                     {
                         usuario.Token = token;
@@ -92,11 +98,19 @@ namespace PruebaAlmacenes.Controllers
                         // Enviar correo
                         SendEmail enviarMail = new SendEmail();
                         enviarMail.Send(usuario.Email, token);
-                        
+                        //return View("StartRecovery");
+                        ViewBag.Message = "El correo ha sido enviado. Verifique su buzón o carpeta Spam.";
+                        return View("Index");
                     }
-                }
-                ViewBag.Message = "El correo ha sido enviado. Verifique su buzón o carpeta Spam.";
-                return View("StartRecovery");                
+                    else
+                    {
+                        //return View("StartRecovery");
+                        ViewBag.Error = "Error";
+                        return View("StartRecovery");
+                    }
+
+                    
+                }                                              
             }
             catch (Exception ex)
             {

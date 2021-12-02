@@ -10,7 +10,6 @@
     <Property Name="CantidadHijos" Type="int" />
     <Property Name="SalarioBase" Type="decimal" Precision="12" Scale="0" Nullable="false" />
     <Property Name="BonoDecreto" Type="decimal" Precision="12" Scale="0" Nullable="false" />
-    <Property Name="FechaNacimiento" Type="date" Nullable="false" />
     <Property Name="UsuarioID" Type="int" Nullable="false" />
     <Property Name="FechaCreacion" Type="datetime" />
   </EntityType>
@@ -29,6 +28,7 @@
     <Property Name="NombreUsuario" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="Email" Type="varchar" MaxLength="100" Nullable="false" />
     <Property Name="Contrasena" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="FechaNacimiento" Type="date" />
     <Property Name="Token" Type="varchar" MaxLength="250" />
     <Property Name="EstadoID" Type="int" />
   </EntityType>

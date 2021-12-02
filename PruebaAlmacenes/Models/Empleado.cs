@@ -20,7 +20,6 @@ namespace PruebaAlmacenes.Models
         public Nullable<int> CantidadHijos { get; set; }
         public decimal SalarioBase { get; set; }
         public decimal BonoDecreto { get; set; }
-        public System.DateTime FechaNacimiento { get; set; }
         public int UsuarioID { get; set; }
         public Nullable<System.DateTime> FechaCreacion { get; set; }
     

@@ -24,6 +24,7 @@ namespace PruebaAlmacenes.Models
         public string NombreUsuario { get; set; }
         public string Email { get; set; }
         public string Contrasena { get; set; }
+        public Nullable<System.DateTime> FechaNacimiento { get; set; }
         public string Token { get; set; }
         public Nullable<int> EstadoID { get; set; }
     
